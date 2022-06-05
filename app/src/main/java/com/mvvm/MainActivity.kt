@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
             binding.txtUser.setText(acc.userName)
             binding.txtPhone.setText(acc.phone)
         }
-
     })
     val accList : ArrayList<Account> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         binding.setOnClickSubmit {
             accList.add(Account(binding.txtUser.text.toString(),binding.txtPhone.text.toString()))
             accountAdapter.update(accList)
+            binding.txtUser.setText("")
+            binding.txtPhone.setText("")
         }
     }
 }
