@@ -1,6 +1,7 @@
 package com.mvvm
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.mvvm.databinding.ActivityMain2Binding
 
@@ -11,7 +12,7 @@ class MainActivity2:AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.setOnClickSum{
+        /*binding.setOnClickSum{
             var a: Float = binding.txtNumber1.text.toString().toFloat()
             var b: Float = binding.txtNumber2.text.toString().toFloat()
             binding.tvResult.text = "$a + $b = ${Sum(a,b)}"
@@ -30,6 +31,32 @@ class MainActivity2:AppCompatActivity() {
             var a: Float = binding.txtNumber1.text.toString().toFloat()
             var b: Float = binding.txtNumber2.text.toString().toFloat()
             binding.tvResult.text = "$a / $b = ${Div(a,b)}"
+        }*/
+        binding.onClickBtn = object : OnClickButton{
+            override fun onCLickSum(view: View) {
+                var a: Float = binding.txtNumber1.text.toString().toFloat()
+                var b: Float = binding.txtNumber2.text.toString().toFloat()
+                binding.tvResult.text = "$a + $b = ${Sum(a,b)}"
+            }
+
+            override fun onCLickSub(view: View) {
+                var a: Float = binding.txtNumber1.text.toString().toFloat()
+                var b: Float = binding.txtNumber2.text.toString().toFloat()
+                binding.tvResult.text = "$a - $b = ${Sub(a,b)}"
+            }
+
+            override fun onCLickMul() {
+                var a: Float = binding.txtNumber1.text.toString().toFloat()
+                var b: Float = binding.txtNumber2.text.toString().toFloat()
+                binding.tvResult.text = "$a x $b = ${Mul(a,b)}"
+            }
+
+            override fun onCLickDiv() {
+                var a: Float = binding.txtNumber1.text.toString().toFloat()
+                var b: Float = binding.txtNumber2.text.toString().toFloat()
+                binding.tvResult.text = "$a / $b = ${Div(a,b)}"
+            }
+
         }
     }
     fun Sum(a: Float, b: Float) : Float = a+b
