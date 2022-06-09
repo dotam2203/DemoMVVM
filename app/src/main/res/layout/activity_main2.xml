@@ -4,13 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
+            name="math"
+            type="com.mvvm.model.MathModel" />
+        <variable
             name="onClickBtn"
-            type="com.mvvm.OnClickButton" />
+            type="com.mvvm.interfaces.OnClickButton" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity2">
+        tools:context=".MainCalculator">
         <TextView
             android:id="@+id/tvTitle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +22,7 @@
             app:layout_constraintBottom_toTopOf="@id/llShow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:text="Calculator"
             android:textStyle="bold"
             android:textColor="#ddaa00"
@@ -30,7 +33,7 @@
             android:id="@+id/llShow"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/border"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,12 +57,13 @@
             android:id="@+id/txtNumber1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="10dp"
             android:hint="Input number 1..."
             android:inputType="numberDecimal"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:text="@{math.NumberA()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/llShow" />
@@ -73,6 +77,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:text="@{math.NumberB()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtNumber1" />
@@ -82,7 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtNumber2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:weightSum="4">
             <Button
@@ -135,6 +140,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintVertical_bias="0.1" />
         </LinearLayout>
-
+        <Button
+            android:id="@+id/btnResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next Result"
+            android:onClick="@{onClickBtn.onCLickResult}"
+            app:layout_constraintTop_toBottomOf="@id/llMath"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

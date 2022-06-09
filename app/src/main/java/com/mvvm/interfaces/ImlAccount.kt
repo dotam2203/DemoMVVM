@@ -1,4 +1,4 @@
-package com.mvvm
+package com.mvvm.interfaces
 
 import com.mvvm.model.Account
 

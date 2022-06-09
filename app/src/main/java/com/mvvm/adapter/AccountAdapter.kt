@@ -1,25 +1,25 @@
-package com.mvvm
+package com.mvvm.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mvvm.databinding.ActivityItemBinding
+import com.mvvm.databinding.ItemAccountBinding
 import com.mvvm.model.Account
 
 class AccountAdapter (val _itemClick : onItemClick) : RecyclerView.Adapter<AccountAdapter.ViewHolder>() {
     var acc:List<Account> = listOf()
-    inner class ViewHolder(val binding :  ActivityItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding :  ItemAccountBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onItemClickk(acc: Account){
             binding.setOnItemClick {
                 _itemClick.onClick(acc)
             }
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountAdapter.ViewHolder {
-        val view = ActivityItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = ItemAccountBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(view)
     }
-    override fun onBindViewHolder(holder: AccountAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
             binding.acc = acc[position]
             onItemClickk(acc[position])

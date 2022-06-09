@@ -4,9 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/drawable/border.xml" value="0.2105" />
+        <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/drawable/border_item.xml" value="0.2195" />
+        <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/activity_draw.xml" value="0.264" />
         <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/activity_item.xml" value="0.2" />
         <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/activity_main2.xml" value="0.24895833333333334" />
+        <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/activity_math_result.xml" value="0.25" />
+        <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/item_account.xml" value="0.17864583333333334" />
+        <entry key="..\:/Android Studio Kotlin/DemoMVVM/app/src/main/res/layout/item_math.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
